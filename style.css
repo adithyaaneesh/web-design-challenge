@@ -12,10 +12,9 @@ body {
 }
 .container {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1300vh;
 }
 .sidebar {
-    margin-left: 10px;
     max-width: 800px;
     background-color:white;
     position: fixed;
@@ -32,16 +31,13 @@ body {
 }
  
 .sidebar a.active {
-    background-color: #a7a9a9;
-    color: #555858;
+    background-color: #b8bebe;
+    color: #666868;
     border-radius: 1px;
 }
 
 .sidebar a:hover {
     text-decoration: underline ;
-}
-.sidebar > div {
-    margin:  20px 20px 20px 20px;
 }
 .sidebar h6 {
     max-width: 200px;
@@ -51,14 +47,7 @@ body {
     text-align: center;
     padding: 20px 20px 20px 20px;
 }
-
-.content {
-    margin-left: 150px;
-    padding: 1px 16px;
-    background: rgba(22, 98, 218, 1);
-    border-radius: 10px;
-}
-header h3 {
+.menu-items h3 {
     display: flex;
     align-content: center;
     align-items: center;
@@ -76,19 +65,226 @@ header h3 {
     text-align: center;
     gap: 19px;
 }
-#campaign {
-    margin-left: 150px;
-    display:flex;
-    justify-content: space-between;
+.grid {
+    /* min-height: 100vh; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 1em;
 }
-.camp {
-    max-width: 1000px;
-    min-height: 150px;
-    background-color: rgb(30, 205, 30);
+.grid > div {
+    background-color: white;
+    border-radius: 13px;
+    padding: 20px;
+}
+.grid > div:nth-child(1) {
+    min-height: 100%;
+    background-color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.grid > div:nth-child(2) {
+    padding: 1px 16px;
+    min-height: 40px;
+    background-color: blue;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.grid > div:nth-child(3) {
+    background-image: url(./assets/catimg.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-color: rgba(20, 161, 95, 1); 
     color: white;
     font-family: var(--primary-font);
-    border-radius: 20px;
+    background-size:120px 120px ;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
-.color {
-    background-color: rgb(59, 59, 179);
+.grid > div:nth-child(4) {
+    background-image: url(./assets/dogimg.svg);
+    background-color: blue;
+    color: white;
+    font-family: var(--primary-font);
+    background-repeat: no-repeat;
+    background-size:120px 120px ;
+    background-position: right bottom; 
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.grid > div figure p {
+    color: black;
+}
+.grid > div figure h4 {
+    font-size: 30px;
+    font-weight: 500;
+
+}
+.grid > div:nth-child(5) {
+    background: rgba(20, 161, 95, 1);
+    color: white;
+    font-family: var(--primary-font);
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.grid > div:nth-child(6) {
+    background: rgba(239, 255, 248, 1);
+    font-family: var(--primary-font);
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+.count  {
+    font-family: var(--primary-font);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.count > div:nth-child(1) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+}
+.count > div:nth-child(2) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background-color: rgba(224, 249, 252, 1);
+}
+.count > div:nth-child(3) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background: rgba(238, 236, 253, 1);
+}
+.count h5 {
+    font-size: 40px;
+    font-weight: 500;
+}
+.count > div {
+    border-radius: 10px;
+    font-size: 20px;
+    border: 3px white;
+    box-shadow: 3px 3px 9px rgba(153, 150, 150, 0.3);
+    padding: 20px;
+    background-color: white;
+    width: 200px; 
+    /* can't set maxwidth */
+    min-height: 70px;
+}
+.active-bar {
+    min-height: 5px;
+    background: rgba(252, 234, 234, 1);
+    border-radius: 30px;
+}
+.active-status {
+    min-height: 5px;
+    max-width: 75%;
+    border-radius: 20px;
+    background: red;
+}
+.pending-bar {
+    min-height: 5px;
+    background: rgba(226, 226, 226, 1);
+    border-radius: 30px;
+}
+.pending-status {
+    min-height: 5px;
+    max-width: 75%;
+    border-radius: 20px;
+    background: rgba(79, 236, 255, 1);
+}
+.complete-bar {
+    min-height: 5px;
+    background: rgba(211, 211, 211, 1);
+    border-radius: 30px;
+}
+.complete-status {
+    min-height: 5px;
+    max-width: 75%;
+    border-radius: 20px;
+    background: rgba(131, 115, 255, 1);
+}
+.grid > div:nth-child(7) {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+.revenue {
+    font-family: var(--primary-font);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.count > div:nth-child(1) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+}
+.count > div:nth-child(2) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background-color: rgba(224, 249, 252, 1);
+}
+.count > div:nth-child(3) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background: rgba(238, 236, 253, 1);
+}
+.rev h5 {
+    font-size: 40px;
+    font-weight: 500;
+}
+.count > div {
+    border-radius: 10px;
+    font-size: 20px;
+    border: 3px white;
+    box-shadow: 3px 3px 9px rgba(153, 150, 150, 0.3);
+    padding: 20px;
+    background-color: white;
+    width: 200px; 
+    /* can't set maxwidth */
+    min-height: 70px;
+}
+.grid > div:nth-child(8) {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 10;
+}
+.grid > div:nth-child(9) {
+    grid-column-start:6;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 10;
+}
+.grid > div:nth-child(10) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 10;
+    grid-row-end: 12;
+}
+.grid > div:nth-child(11) {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 10;
+    grid-row-end: 12;
+}
+.grid > div:nth-child(12) {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 10;
+    grid-row-end: 12;
 }
