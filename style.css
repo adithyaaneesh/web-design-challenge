@@ -1,5 +1,6 @@
 :root {
     --primary-font:'quicksand';
+    --primary-subtitle:'Montserrat'
 }
 
 * {
@@ -33,7 +34,7 @@ body {
 .sidebar a.active {
     background-color: #b8bebe;
     color: #666868;
-    border-radius: 1px;
+    border-radius: 8px;
 }
 
 .sidebar a:hover {
@@ -46,6 +47,7 @@ body {
     color: white;
     text-align: center;
     padding: 20px 20px 20px 20px;
+    margin-bottom: 20px;
 }
 .menu-items h3 {
     display: flex;
@@ -155,7 +157,7 @@ body {
 .count > div:nth-child(1) img{
     padding: 4px 4px;
     border-radius: 7px;
-    background-color: antiquewhite;
+    background: rgba(252, 234, 234, 1);
 }
 .count > div:nth-child(2) img{
     padding: 4px 4px;
@@ -181,6 +183,9 @@ body {
     width: 200px; 
     /* can't set maxwidth */
     min-height: 70px;
+}
+.count > div figure {
+    display: flex;
 }
 .active-bar {
     min-height: 5px;
@@ -216,47 +221,66 @@ body {
     background: rgba(131, 115, 255, 1);
 }
 .grid > div:nth-child(7) {
+    background: rgba(194, 215, 255, 1);
+    font-family: var(--primary-font);
     grid-column-start: 5;
     grid-column-end: 8;
     grid-row-start: 4;
     grid-row-end: 6;
 }
 .revenue {
+    border-radius: 10px;
     font-family: var(--primary-font);
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
-.count > div:nth-child(1) img{
-    padding: 4px 4px;
-    border-radius: 7px;
-    background-color: antiquewhite;
-}
-.count > div:nth-child(2) img{
-    padding: 4px 4px;
-    border-radius: 7px;
-    background-color: rgba(224, 249, 252, 1);
-}
-.count > div:nth-child(3) img{
-    padding: 4px 4px;
-    border-radius: 7px;
-    background: rgba(238, 236, 253, 1);
-}
-.rev h5 {
-    font-size: 40px;
-    font-weight: 500;
-}
-.count > div {
+.revenue > div {
     border-radius: 10px;
     font-size: 20px;
     border: 3px white;
     box-shadow: 3px 3px 9px rgba(153, 150, 150, 0.3);
     padding: 20px;
     background-color: white;
-    width: 200px; 
     /* can't set maxwidth */
-    min-height: 70px;
+}
+.revenue > div span {
+    font-size: 10px;
+    font-weight: 600;
+    max-width:100px ;
+}
+.revenue  > div figure {
+    display: flex;
+    gap: 10px;
+}
+.revenue > div:nth-child(1) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background: rgba(252, 234, 234, 1);
+}
+.revenue > div:nth-child(1) h5{
+    color: rgba(255, 119, 119, 1);
+}
+.revenue > div:nth-child(2) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background-color: rgba(224, 249, 252, 1);
+}
+.revenue > div:nth-child(2) h5{
+    color: rgba(58, 234, 255, 1);
+}
+.revenue > div:nth-child(3) img{
+    padding: 4px 4px;
+    border-radius: 7px;
+    background: rgba(238, 236, 253, 1);
+}
+.revenue > div:nth-child(3) h5{
+    color: rgba(117, 99, 255, 1);
+}
+.rev h5 {
+    font-size: 40px;
+    font-weight: 500;
 }
 .grid > div:nth-child(8) {
     grid-column-start: 2;
@@ -271,10 +295,22 @@ body {
     grid-row-end: 10;
 }
 .grid > div:nth-child(10) {
+    background-image: url(./assets/graph.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 10;
     grid-row-end: 12;
+}
+.grid > div:nth-child(10) h5 {
+    color: green;
+    font-family:var(--primary-subtitle);
+}
+.grid > div:nth-child(10) span {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
 }
 .grid > div:nth-child(11) {
     grid-column-start: 4;
